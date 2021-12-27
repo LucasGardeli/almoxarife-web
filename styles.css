@@ -12,6 +12,7 @@
 }
 
 body{
+    
     min-height: 100vh;
     min-width: 100vw;
     background: linear-gradient(45deg,#00c6ff,#363795);
@@ -121,5 +122,8 @@ main button{
     height: 2rem;
 }
 
+.table-tools{
+    border: 10px;
+}
 
 

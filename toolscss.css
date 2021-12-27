@@ -1,0 +1,22 @@
+table,th,tr,td {
+    border-collapse: collapse;
+    border: 2px solid black;
+    text-align: center;
+    width: 70%;
+    }
+
+th{
+    text-align: center;
+    padding: 0.7rem;
+    background-color: rgb(12, 68, 172);
+    color:white;
+    font-size: 0.8rem;
+}  
+.tdnot {
+    background-color: rgba(255, 0, 0, 0.637);
+}  
+.tdyes{
+    background-color: rgba(6, 175, 6, 0.637);
+}
+
+

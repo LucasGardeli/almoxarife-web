@@ -1,21 +1,29 @@
 <?php
 require_once "connection.php";
 
-$usuario = $_POST["user"];
-$senha = $_POST["password"];
+$Nome = $_POST["Nome"];
+$Empresa = $_POST["Empresa"];
+$Ferramenta = $_POST["Ferramenta"];
+$Data = $_POST["Data"];
+$Devolveu = 0;
 
 $con = new Connection();
 $pdo = $con ->Connect();
-$stmt = $pdo ->prepare("INSERT INTO  users(username,password) values(:userr,:pass)");
+$stmt = $pdo ->prepare("INSERT INTO  almoxarifado_ferramentas(Nome,Empresa,Ferramenta,Data,Devolveu) values(:Nome,:Empresa,:Ferramenta,:Data,:Devolveu)");
 
 
-$senha = md5($senha);
-$stmt ->bindParam(':userr',$usuario,PDO::PARAM_STR);
-$stmt ->bindParam(':pass',$senha,PDO::PARAM_STR);
+//$senha = md5($senha);
+$stmt ->bindParam(':Nome',$Nome,PDO::PARAM_STR);
+$stmt ->bindParam(':Empresa',$Empresa,PDO::PARAM_STR);
+$stmt ->bindParam(':Ferramenta',$Ferramenta,PDO::PARAM_STR);
+$stmt ->bindParam(':Data',$Data,PDO::PARAM_STR);
+$stmt ->bindParam(':Devolveu',$Devolveu,PDO::PARAM_INT);
+
+
 
 try{
     $stmt ->execute();
-    echo json_encode(array('Usuario Criado' =>$usuario));
+    echo json_encode(array('Indice Inserio' =>$Nome));
 
 }catch(PDOException $e){
    // echo $e;

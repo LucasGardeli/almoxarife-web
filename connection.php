@@ -5,8 +5,8 @@ class Connection{
     private $host = "localhost";
     private $db   = "terradb";
     private $user = "root";
-    private $key  = "159123";
-    private $dsn = "mysql:host=localhost;dbname=almoxarife;";
+    private $key  = "";
+    private $dsn = "mysql:host=localhost;dbname=europa;";
 
 
 

@@ -1,43 +1,59 @@
 <?php
 require_once "connection.php";
-
 $con = new Connection();
 $pdo = $con->Connect();
-$stmt =$pdo->prepare("SELECT * FROM users");
-
+$stmt =$pdo->prepare("SELECT * FROM almoxarifado_ferramentas");
 $stmt->execute();
+?>
 
-//$result = $stmt ->fetch(PDO::FETCH_ASSOC);
-
-//echo var_dump($result);
-
-/*
-echo "<table border='1'>
+<DOCTYPE html>
+    <head>
+        <link rel="stylesheet" href="toolscss.css">  
+        <title>Ferramentas em USO</title>
+    </head>
+    <body>
+  
+<table class="table-tools">
 <tr>
-<th>iD</th>
-<th>Username</th>
-<th>Pass</th>
-</tr>";
-*/
+    <thead>
+    <th>NOME</th>
+    <th>EMPRESA</th>
+    <th>FERRAMENTA</th>
+    <th>DATA</th>
+    <th>DEVOLVEU</th>
+    </tr>
+    </thead>
 
+   
 
+<?php
 while($row = $stmt->fetch(PDO::FETCH_ASSOC)){
     $rows[] = $row;
-   // print_r($rows);
-   /*
-   echo "<tr>";   
-       echo "<td>". $row['id'] . "</td>";
-       echo "<td>". $row['username'] . "</td>";   
-       echo "<td>". $row['password'] . "</td>";
-   echo "</tr>";
-*/
-    
-
+    echo"<tr>";  
+        echo "<td>" .$row['Nome']. "</td>";
+        echo "<td>" .$row['Empresa']. "</td>";
+        echo "<td>" .$row['Ferramenta']. "</td>";
+        echo "<td>" .$row['Data']. "</td>"; 
+        if($row['Devolveu']==0){
+            echo "<td class='tdnot'>"."NÃO"."</td>";  
+        }else{
+            echo "<td class='tdyes'>"."SIM"."</td>"; 
+        }
+        
+      
+   echo"</tr>";
 }
-echo json_encode($rows);
-//echo "<tr>";
-//echo "<td>" . $row['username'] . "</td>";
-//echo "<td>" . $row['password'] . "</td>";
-//echo "</tr>";
+?>
+  
 
-//echo "</table>";
+    
+</table>
+    </body>
+
+
+
+
+
+<?php
+//echo json_encode($rows);
+?>
