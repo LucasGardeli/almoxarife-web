@@ -1,0 +1,14 @@
+:root{
+    --primary:#15224c;
+    --secondary:#01001f;
+    
+    --primary_btn_text:#f1f0f0;
+    --primary_btn_hover:#a3afc0;
+
+    --table_color: var(--primary);
+    --table_border: #01001f70;
+
+    --primary_collumn: #15224cea;
+    --secondary_collunm: var(--secondary);
+}
+

@@ -2,7 +2,7 @@
 $username = $_POST["user"];
 $pwd = $_POST["password"];
 require_once "connection.php";
-
+session_start();
 
 
  function auth($user,$pwdd){    
@@ -13,7 +13,7 @@ require_once "connection.php";
     $stmt = $pdo->prepare("SELECT * FROM users WHERE(username=:username)");
     //$stmt = $pdo->prepare("INSERT INTO users(username,password) VALUES(:username,:password)");
 
-     
+
     $stmt->bindParam(':username',$user,PDO::PARAM_STR);
     
     try{
@@ -24,6 +24,10 @@ require_once "connection.php";
         if($result){
             if(!strcmp($pwdd, $result["password"])){                              
                 echo json_encode(array('code' => "Bem-Vindo $user"));
+                $_SESSION['usuario'] =$result['username'];
+                $_SESSION['nome']=$result["nome"];
+                $_SESSION['função']=$result["função"];
+                header("Location:Feed.php");
             }else{
                               
                 echo json_encode(array('code' => 'SENHA INCORRETA'));                              

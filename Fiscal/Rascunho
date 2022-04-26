@@ -1,0 +1,10 @@
+$stmt = $pdo->prepare("INSERT INTO nota_fiscal_log(Emitente,Numero,Data_Emissão,Data_Vencimento,Valor,Obra,Obs) VALUES(:Emitente,:Emissão,:Vencimento,:Valor,:Obra,:Obs)");
+
+
+$Emitente = $_POST['Emitente'];
+$Numero = $_POST['Numero'];
+$Emissao = $_POST['Emissão'];
+$Vencimento = $_POST['Vencimento'];
+$Valor = $_POST['Valor'];
+$Obra = $_POST['Obra'];
+$Valor = $_POST['Valor'];

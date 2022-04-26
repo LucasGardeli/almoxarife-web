@@ -1,0 +1,234 @@
+body{
+    /* background: linear-gradient(45deg,#00c6ff,#363795); */
+    margin:0;
+    background: rgb(233, 226, 226);
+}
+
+.ActionBar{
+    /* background: rgb(12, 100, 52); */
+    /* background: linear-gradient(90deg,#3559bd,#363795); */
+    /* border: 2px solid rgb(12, 100, 52); */
+
+    /* box-shadow: 7px 5px 15px rgba(14, 29, 37, 0.58); */
+    /* backgrou\nd: #3559bd; */
+    /* background: #303030; */
+
+
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    align-content: center;
+    padding: 0.6rem 0.5rem;
+    border-radius: 10px;
+    margin: 2rem 1rem;
+    border: none;
+    
+}
+
+.SearchBar, .SearchBar::placeholder{ 
+    margin-right: 0rem;
+    padding: 0.7rem 0.5rem; 
+    width: 40rem;    
+    border:none;
+    background: white;
+    border-radius: 20px;
+
+    color: rgb(36, 36, 36);   
+    font-size: medium; 
+    font-weight: 500;  
+    
+}
+.SearchBar{
+    border: 3px solid var(--primary);
+
+}
+
+.SearchBtn, .SearchBtn i, .InsertBtn{
+    margin-inline: 0.7rem;
+    padding: 0.3rem 1.7rem;
+    font-size: 30px;
+    /* color: #3559bd; */
+    color: white;
+    background: var(--primary);
+    /* background: rgb(37, 150, 190); */
+
+    /* border:1px solid rgb(172, 171, 171); */
+    border:none;
+    border-radius: 30px;
+    box-shadow: 7px 5px 15px rgba(14, 29, 37, 0.58);
+}
+
+.SearchBtn:hover, .InsertBtn:hover{
+    background-color: #a7a8bd;
+}
+
+
+.TableForm{
+    display: flex;
+    flex-direction: column;
+    
+}
+
+th,tr,td {
+    border-collapse: collapse;
+    border: 0.1px solid var(--table_border);
+    text-align: center;    
+    font-weight: 500;    
+}
+
+tr:nth-child(even){background-color: #b2c4e279;}
+
+
+.TablePanel{
+    padding: 1rem 1rem;
+    /* background: white; */
+    border-radius: 10px;
+}
+
+table {
+    /* background-color: rgb(255, 254, 253); */
+    box-shadow: 7px 5px 15px rgba(14, 29, 37, 0.58);
+    background: whitesmoke;
+
+    border-collapse: collapse;
+    
+    text-align: center;
+}
+
+thead{
+    /* background: linear-gradient(45deg,#05a75b,#058348); */
+    /* background: linen; */
+    /* background-color: rgb(12, 100, 52); */
+    background: var(--table_color);
+    border: 2px solid var(--table_border);
+}
+
+
+th{
+    border: 0.4px solid 383e3f;
+    
+    text-align: center;
+    /* padding-inline: 4rem; */
+    padding: 0.6rem 0.4rem;
+    /*background-color: rgb(12, 68, 172);*/    
+    color:rgb(253, 253, 252);
+    font-size: 1rem;
+    font-family:sans-serif;
+}  
+td{
+    padding: 0.1rem ;
+    
+}
+
+.action{
+    width: 100%;
+    height: 80%;
+    padding: 0.4rem 0.2rem;
+    background-color: rgb(190, 5, 5);
+    color:white;
+    border:1px solid black;
+}
+
+.id-column{
+    /* background-color: rgb(24, 138, 75); */
+    background: var(--primary_collumn);
+    border:1px solid var(--secondary_collunm);
+
+    color:rgb(253, 253, 252);
+}
+
+.mid {
+    /* width: 21%; */
+    /* width: 2rem; */
+    padding-inline: 2.1rem;
+}
+
+.large{
+    padding-inline: 8rem;
+}
+
+ .date{
+    /* width: 20%; */
+    width: 10rem;
+}
+
+.main .status{
+    /* width: 1%; */
+    width: 1rem;
+}
+
+.tdnot {
+    background-color: rgb(190, 5, 5);
+    color:whitesmoke;
+    
+}  
+.tdyes{
+    background-color: rgb(24, 138, 75);
+    /* rgb(12, 36, 87); */
+    color:whitesmoke;
+}
+
+.main{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    
+    
+}
+
+form{
+    display: flex;
+    
+}
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.822); /* Black w/ opacity */
+  }
+
+  .modal-content {
+    background-color: #fefefe;
+     margin: 15% auto; /*15% from the top and centered */
+    /* padding: 20px; */
+    border: 1px solid #888;
+    width: 50%; /* Could be more or less, depending on screen size */
+  }
+  .modal-content header{
+    
+    background-color:#3559bd !important;
+    padding: 0.3rem;
+    font-size: 2rem;
+    color: white;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    /* padding-bottom: 1rem; */
+  }
+#close{
+    float: right;
+}
+
+.InsertForm{
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    align-content: center;
+}
+.InsertForm input{
+ 
+    width: 15rem;
+
+}
+
+.InsertForm button{
+    width: 8rem;
+}
+  
