@@ -31,8 +31,9 @@
 .header_button{
     /* box-sizing: border-box; */
     padding: 1rem;
+    margin-right: 1rem;
     justify-content: space-evenly;
-    width: 11rem;
+    width: fit-content;
     height:3.5rem;
     border: none;
     background: none;
@@ -44,17 +45,24 @@
     align-items: center;
     /* font-weight: 900px bold; */
 }
+.header_button .icon{
+    margin-left: 0.25rem;
+    margin-right: 0.25rem;;
+}
 
 
 
 
-.home_button{    
+
+
+.home_button{ 
+    /* margin-right: 1rem;;    */
     padding: 0rem 2rem;
-    justify-content:space-evenly;
+    justify-content:space-between;
     display:flex;
     flex-direction: row;
     align-items: center;
-    /* justify-content: center; */
+    justify-content: center;
     width:6rem;  
     height:3.5rem; 
     border: none;
@@ -62,7 +70,7 @@
     /* font-family: 'Segoe UI'; */
     font-size: 1.2rem;    
     /* background:rgba(8, 29, 75, 0.301); */
-    background: var(--secondary);
+    /* background: var(--secondary); */
 
     color: white;
 }

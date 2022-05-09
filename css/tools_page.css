@@ -203,7 +203,7 @@ form{
   }
   .modal-content header{
     
-    background-color:#3559bd !important;
+    background:var(--primary) !important;
     padding: 0.3rem;
     font-size: 2rem;
     color: white;
@@ -232,3 +232,15 @@ form{
     width: 8rem;
 }
   
+
+.pagination_btn{
+    font-size: 16px;
+    color: white;
+    background: var(--primary);
+    border:solid 1px #01001f3f;
+    border-radius: 10px;
+    box-shadow: 7px 5px 15px rgba(14, 29, 37, 0.58);
+    margin: 5px;
+    position: relative;
+    left: 5px;
+}

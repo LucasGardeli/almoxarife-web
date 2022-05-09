@@ -31,10 +31,10 @@ session_start();
             }else{
                               
                 echo json_encode(array('code' => 'SENHA INCORRETA'));                              
-                
+                session_abort();
             }
         }else{
-                     
+            session_abort();        
             echo json_encode(array('code' => 'USUARIO NÃO ENCONTRADO'));
         }
            

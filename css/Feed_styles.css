@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Open+Sans:wght@300&display=swap');
+
+*{
+    font-family: 'Open Sans';
+}
+
 body{
     margin:0;
     /* min-width: 100vh; */
@@ -23,18 +29,18 @@ head{
 
 .user_panel{
     display:flex;  
-    border-radius: 5px;  
+    flex-direction:column;
     margin-top: 1rem;    
     margin-left: 1rem;
-    background: white;
+    background: none;
     width: 16rem;
-    height: 20rem;
-    box-shadow: 0px 0px 8px 1px rgba(14, 29, 37, 0.473);
+    height: fit-content;
+    
+    
 }
 
-.user_panel .user_name{
+.user_panel .user_name{      
     position: relative;
-    top: -0.4rem;
     display:flex;
     flex-direction:column;
     justify-content: center;
@@ -42,27 +48,61 @@ head{
 
     font-size: 23px;
     Color:rgba(29, 29, 29, 0.877);
-    background:none;    
+    background:white;    
 
     width:100%;
     height:fit-content;
     
 }
+.user_info{
+    /* border-radius: 5px;   */
+
+    box-shadow: 0px 0px 8px 1px rgba(14, 29, 37, 0.473);
+
+    padding-left: 0.6rem;
+    Color:rgba(29, 29, 29, 0.9);
+    background:white;
+}
+.user_info i{
+    margin-right: 0.5rem;
+    font-size: 16px;
+}
 .name_underline{
-    position: relative;
+    
+    /* position: relative; */
     background:rgba(0, 0, 0, 0.11);
     width:90%;
     height:1px;
-    top: 0.2rem;
+    /* top: -1rem; */
 }
 
 .user_avatar{
+    
+    background:white;
+    display: flex;
     position: relative;
-    top: -0.9rem;
+    justify-content: center;
+    top: -1rem;
     width: 45%;
     border-radius: 50%;
+    margin-bottom: 0.5rem;
+    margin-left: auto;
+    margin-right: auto;
     /* height: 50%; */
     
+}
+
+.user_event{
+    padding-left:0.6rem;
+    border-radius: 5px;  
+    box-shadow: 0px 0px 8px 1px rgba(14, 29, 37, 0.473);
+    margin-top:0.7rem;
+    background: var(--secondary);
+    color: white;
+}
+.user_event i{
+    margin-right: 0.5rem;
+    font-size: 16px;
 }
 
 .feed{
@@ -82,11 +122,13 @@ head{
     display: flex;
     flex-direction: column;
     padding: 0.6rem;
-    margin-bottom: 2.5rem;
+    margin-bottom: 1.5rem;
     background: white;
     box-shadow: 0px 0px 8px 1px rgba(14, 29, 37, 0.473);
     border-radius: 5px;
 }
+
+
 
 .diario_form header{
     display: flex; 
@@ -96,37 +138,45 @@ head{
     /* padding: 0 1rem; */
     background: none;
     font-size: large;
-    color: rgba(0, 0, 0, 0.579);
+    color: rgba(0, 0, 0, 0.685); 
+       
 }
 
 .diario_content{
-    border:solid 2px rgba(0, 0, 0, 0.822);
+    /* border:solid 1px rgba(0, 0, 0, 0.925); */
+    border: none;
+    background: rgba(202, 202, 202, 0.416);
     border-radius:5px;
     font-size: 1rem;
     font-weight: 500;
     padding: 0.5rem;
     justify-content: center;
+    
 }
 .post_button{
+    display:flex;
     font-family: sans-serif;
     font-weight: 1500;
     font-size: large;
     color:var(--primary_btn_text);
-
+    box-shadow: 0px 0px 5px 3px rgba(14, 29, 37, 0.342);
     margin-top:1rem;
-    width: fit-content;
+    padding: 0 0.2rem;
+    width: 6rem;
     min-height: fit-content;
+    justify-content: space-evenly;
+    align-items: center;
     height: 2rem;
     border:none;
     border-radius: 4px;    
-    background: var(--primary);
+    background: var(--secondary);
 }
 .post_button:hover{
     background: var(--primary_btn_hover);
 }
 .post{
      height: fit-content;
-     margin-bottom: 2.5rem;
+     margin-bottom: 0.9em;
      background: white;
      box-shadow: 0px 0px 8px 1px rgba(14, 29, 37, 0.473);
      border-radius: 5px;
@@ -142,16 +192,17 @@ head{
     width: fit-content;
     border-radius: 5px;
 
-    font-size: x-large;
-    
+    font-size: large;
+    font-weight: 700;
+    margin:0;
 
 }
 .post_title img{
     position: relative;
     top: 0rem;
     margin-right: 1rem;
-    width: 80px;
-    height: auto;
+    width: 50px;
+    height: 50px;
 }
 
 .post_textbox{
@@ -159,18 +210,33 @@ head{
     flex-direction: row;
     justify-content:space-between;
     padding: 0 1rem;
-    margin-top: 1.5rem;
+    margin-top: 0.1rem;
     width: auto;
     height: fit-content;
-    font-size: large;
-    color: rgba(0, 0, 0, 0.579);
+    font-size: 16px;
+    font-weight: 600;
+    color: rgba(0, 0, 0, 0.705);
     
 }
 
 .post_line{
-    margin-top: 2rem;
+    margin-top: 0.1rem;
     width: 100%;
-    height: 0px;
-    border: solid 1px rgba(128, 128, 128, 0.397);
+    height: 0.1px;
+    background:rgba(44, 44, 44, 0.192);
+    /* border: solid 0.2px rgba(128, 128, 128, 0.397); */
+    /* border-radius: 5px; */
+}
+
+
+.input_obra{
+    width: 15rem;
+    height: 1.7rem;
+    /* border:2px solid rgba(0, 0, 0, 0.664); */
+    margin-bottom: 1rem;
     border-radius: 5px;
+    border: none;
+    background: rgba(202, 202, 202, 0.416);
+    border-radius:5px;
+
 }

@@ -1,0 +1,3 @@
+
+Seleção de multiplas imagens e previews
+https://stackoverflow.com/questions/20779983/multiple-image-upload-and-preview

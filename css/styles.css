@@ -15,7 +15,9 @@ body{
     
     min-height: 100vh;
     min-width: 100vw;
-    background: linear-gradient(45deg,#00c6ff,#363795);
+    /* background: linear-gradient(45deg,#00c6ff,#363795); */
+    /* background: linear-gradient(45deg,#088b4a,#369578); */
+    background: radial-gradient(circle at -1% 57.5%, rgb(19, 170, 82) 0%, rgb(0, 102, 43) 90%);
     /*background-image: url(resources/img.jpg);*/    
     background-size:cover;
     background-position: center;    
@@ -55,7 +57,7 @@ main h2::before{
     bottom: 0px;
     left: 0;
     border-radius: 8px;
-    background: linear-gradient(45deg,#00c6ff,#7094ca);
+    background: linear-gradient(45deg,#056e3a,#369578);
 }
 
 .footer i{    
@@ -114,7 +116,7 @@ form.input-field:first-child{
 }
 
 main button{
-    background:linear-gradient(90deg,#0099ff,#7094ca);
+    background:linear-gradient(90deg,#088b4a,#369578);
     color:aliceblue;
     border-radius: 4px;
     margin-top: 1rem;

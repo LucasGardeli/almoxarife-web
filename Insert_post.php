@@ -1,8 +1,10 @@
 <?php
 require ("connection.php");
-
-$autor = $_POST['autor'];
-$data = $_POST['data'];
+session_start();
+// $autor = $_POST['autor'];
+$autor = $_SESSION['nome'];  //come from auth.php
+// $data = $_POST['data']; 
+$data = date("Y/m/d");
 $obra = $_POST['obra'];
 $texto = $_POST['texto'];
 // $obs = $_POST['obs'];
@@ -31,6 +33,7 @@ $stmt ->bindParam(':fotos', $fotos,PDO::PARAM_STR);
 try{
     $stmt ->execute();
     echo "Postado";
+    header("location:Feed.php");
 }catch(Exception $e){
     echo "Error: " . $e;
 }

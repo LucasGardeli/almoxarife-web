@@ -1,14 +1,17 @@
 :root{
-    --primary:#15224c;
-    --secondary:#01001f;
+    /* --primary:#15224c; */
+    --primary: linear-gradient(45deg,var(--secondary),#0046c9,#006dc7);
+    /* --secondary:#4b4b66e5; */
+    --secondary:#022f81b4;
+
     
     --primary_btn_text:#f1f0f0;
-    --primary_btn_hover:#a3afc0;
+    --primary_btn_hover:#4e4e4e;
 
     --table_color: var(--primary);
     --table_border: #01001f70;
 
-    --primary_collumn: #15224cea;
+    --primary_collumn: var(--primary    );
     --secondary_collunm: var(--secondary);
 }
 

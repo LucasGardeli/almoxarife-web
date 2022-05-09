@@ -1,9 +1,48 @@
 <?php
 require_once "connection.php";
+session_start();
+
+if(array_key_exists('pag',$_SESSION)){
+    $pag = $_SESSION['pag'];
+
+}else{
+    $_SESSION['pag'] =1;
+    $pag = $_SESSION['pag'];
+}
+
+if(isset($_POST['Inicio'])){
+    $_SESSION['pag'] =1;
+    $pag = $_SESSION['pag'];
+}
+
+if(isset($_POST['Proximo'])){
+    $_SESSION['pag']+=1;
+    $pag = $_SESSION['pag'];
+}
+
+ if(isset($_POST['Anterior'])){
+     if($_SESSION['pag']>1){
+     $_SESSION['pag']-=1;
+     $pag = $_SESSION['pag'];
+ }}
+
+
+$limit=$pag * 60;
+$offset=$limit - 60;
+
+
+
 $con = new Connection();
 $pdo = $con->Connect();
 $stmt =$pdo->prepare("SELECT * FROM almoxarifado_ferramentas");
 $stmt->execute();
+
+
+if(!$_SESSION['usuario']){
+    // header('location:index.html');
+}
+
+
 ?>
 
 <!DOCTYPE html>
@@ -42,6 +81,8 @@ $stmt->execute();
 
     </div> 
 
+
+
     <div>
         <div class="ActionBar"> 
             <form action="Search_Name.php" method="get">
@@ -50,7 +91,15 @@ $stmt->execute();
                 <button type="button" id="InsertBtn" class="InsertBtn">Inserir</button>
             </form>          
         </div>   
-                
+        
+        <div>
+            <form method="POST" action="tools.php">
+                <button type="submit" value="Inicio" name="Inicio" class="pagination_btn">Inicio</button>
+                <button type="submit" value="Anterior" name="Anterior" class="pagination_btn">Anterior</button>
+                <button type="submit" value="Proximo" name="Proximo" class="pagination_btn">Proximo</button>
+            </form>
+        </div>
+
                 <form method="post" action=Update_tools.php class="TableForm">        
                     <div class="TablePanel">
                        <table class="table-tools">  
@@ -65,24 +114,40 @@ $stmt->execute();
                            </thead>
                            
                        <?php
-                       while($row = $stmt->fetch(PDO::FETCH_ASSOC)){
-                           $rows[] = $row;
-                           echo"<tr>";  
-                               echo"<td class='id-column'>" .$row['id']. "</td>";
-                               echo "<td>" .$row['Nome']. "</td>";
-                               echo "<td>" .$row['Empresa']. "</td>";
-                               echo "<td>" .$row['Ferramenta']. "</td>";
-                               echo "<td>" .$row['Data']. "</td>"; 
-                               if($row['Devolveu']==0){
-                                   echo "<td class='tdnot'>"."Não"."</td>"; 
-                                   echo "<td><button class=action type='submit' name=id value=" .$row['id']. ">Finalizar</button></td>";
-                               }else{
-                                   echo "<td class='tdyes'>"."Sim"."</td>"; 
-                               }
-                               
-                             
-                          echo"</tr>";
-                       }
+
+                            while($row = $stmt->fetch(PDO::FETCH_ASSOC)){
+                                $rows[] = $row;
+
+                            }
+
+                            $rows = array_reverse($rows);
+
+                            usort($rows, function($a, $b) {
+                                return $a['Devolveu'] - $b['Devolveu'];
+                            });                                             
+                        
+
+                            if( count($rows)<$limit ){
+                                $limit=count($rows);
+                            }                      
+                       
+                        
+                            for($i=$offset; $i<$limit; $i++){
+                                echo"<tr>";  
+                                echo"<td class='id-column'>" .$rows[$i]['id']. "</td>";
+                                echo "<td>" .$rows[$i]['Nome']. "</td>";
+                                echo "<td>" .$rows[$i]['Empresa']. "</td>";
+                                echo "<td>" .$rows[$i]['Ferramenta']. "</td>";
+                                echo "<td>" .$rows[$i]['Data']. "</td>"; 
+                                if($rows[$i]['Devolveu']==0){
+                                    echo "<td class='tdnot'>"."Não"."</td>"; 
+                                    echo "<td><button class=action type='submit' name=id value=" .$rows[$i]['id']. ">Finalizar</button></td>";
+                                }else{
+                                    echo "<td class='tdyes'>"."Sim"."</td>"; 
+                                }                     
+                                echo"</tr>";
+                        
+                            }
                        ?>
                          
                        
