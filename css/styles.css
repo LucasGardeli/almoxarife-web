@@ -57,7 +57,7 @@ main h2::before{
     bottom: 0px;
     left: 0;
     border-radius: 8px;
-    background: linear-gradient(45deg,#056e3a,#369578);
+    background: linear-gradient(45deg,var(--secondary),#0046c9,#006dc7);
 }
 
 .footer i{    
@@ -116,7 +116,7 @@ form.input-field:first-child{
 }
 
 main button{
-    background:linear-gradient(90deg,#088b4a,#369578);
+    background: linear-gradient(45deg,var(--secondary),#0046c9,#006dc7);
     color:aliceblue;
     border-radius: 4px;
     margin-top: 1rem;
