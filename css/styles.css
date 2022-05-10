@@ -17,7 +17,7 @@ body{
     min-width: 100vw;
     /* background: linear-gradient(45deg,#00c6ff,#363795); */
     /* background: linear-gradient(45deg,#088b4a,#369578); */
-    background: radial-gradient(circle at -1% 57.5%, rgb(19, 170, 82) 0%, rgb(0, 102, 43) 90%);
+    background: linear-gradient(45deg,var(--secondary),#0046c9,#006dc7);
     /*background-image: url(resources/img.jpg);*/    
     background-size:cover;
     background-position: center;    
